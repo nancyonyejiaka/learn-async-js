@@ -8,6 +8,7 @@ const fetchPromise1 = fetch(
     "file://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json",
   );
   
+  // returns the first promise that gives a response, goes into catch block if all fail
   Promise.any([fetchPromise1, fetchPromise2, fetchPromise3])
     .then((response) => {
         console.log(`${response.url}: ${response.status}`);

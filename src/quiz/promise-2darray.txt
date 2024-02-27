@@ -1,1 +1,23 @@
 Explain the code execution based on the order of the messages logged in src/quiz/promise-2darray.txt.
+
+Sum called ... 
+    -> The sum function is initially called for sumPromise1
+returning from sum 
+    -> The body of the sumPromise1 is handled asynchronously via the setTimeout method which puts in the event loop,
+        and the promise is resolved with the sum value in in.
+Promise { <pending> }
+    -> The pending promise returned logged  for sumPromise1
+Sum called ... 
+    -> The sum function is initially called for sumPromise2
+rejecting ...
+    -> The promise from sumPromise2 is rejected because it was given a string not an array
+returning from sum
+    -> The body of sumPromise2 is handled asynchronously
+Promise { <pending> }
+    -> The pending promise returned logged  for sumPromise2
+Failed to execute: BAD INPUT: Expected array as input
+    -> The error message caught and logged for sumPromise2
+resolving ... 
+    -> The promise from sumPromise1 is resolved with the sum value in it.
+45
+    -> The sum of the 2darray from sumPromise1
